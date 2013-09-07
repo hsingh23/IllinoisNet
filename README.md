@@ -1,9 +1,9 @@
 Get IllinoisNet working on linux!!
 ===========
   
-**You need to fill in your password and netid in the config file  
 First Copy the included wpa_supplicant to /etc/wpa_supplicant.conf**   
 
+**You need to fill in your password and netid in the config file  
 To get a password do `echo -n password_here | iconv -t utf16le | openssl md4`
     password=hash:MY_HASH_HERE
 
@@ -38,6 +38,20 @@ To connect to the internet, put this in your ~/.bashrc or .zshrc and
     }
     function refresh(){
       sudo dhclient wlan0
+    }
+    function internet1(){
+      sudo service network-manger stop
+      sudo service wicd stop
+      sudo killall wpa_supplicant
+      sudo wpa_supplicant -i wlan1 -c /etc/wpa_supplicant.conf -B # -b for background you may need to change this to wlan1 based on what sudo iwconfig says
+      dhclient -r wlan1 # release old connection, again may want to change to wlan1
+      echo "refreshing the dhcp client - this could take a while or it could not work"
+      sudo dhclient wlan1
+      sudo iwconfig
+      echo "and we are good to go - happy surfing"
+    }
+    function refresh1(){
+      sudo dhclient wlan1
     }
 ```
 You might want to make this script run on boot.
