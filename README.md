@@ -32,7 +32,7 @@ To connect to the internet, put this in your ~/.bashrc or .zshrc and
       echo "and we are good to go - happy surfing"
     }
     function refresh(){
-      sudo dhclient -r wlan0
+      sudo dhclient wlan0
     }
 
 You might want to make this script run on boot.
