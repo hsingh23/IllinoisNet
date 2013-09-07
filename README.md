@@ -2,9 +2,9 @@ IllinoisNet
 ===========
 
 #Get IllinoisNet working on linux!!  
-##First Copy the included wpa_supplicant to /etc/wpa_supplicant.conf  
+**You need to fill in your password and netid in the config file  
+First Copy the included wpa_supplicant to /etc/wpa_supplicant.conf**   
 
-##You need to fill in your password and netid
 To get a password do `echo -n password_here | iconv -t utf16le | openssl md4`
     password=hash:MY_HASH_HERE
 
