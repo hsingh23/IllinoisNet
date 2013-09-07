@@ -1,7 +1,6 @@
-IllinoisNet
+Get IllinoisNet working on linux!!
 ===========
-
-#Get IllinoisNet working on linux!!  
+  
 **You need to fill in your password and netid in the config file  
 First Copy the included wpa_supplicant to /etc/wpa_supplicant.conf**   
 
