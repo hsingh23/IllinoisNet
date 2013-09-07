@@ -54,4 +54,4 @@ To connect to the internet, put this in your ~/.bashrc or .zshrc and
       sudo dhclient wlan1
     }
 ```
-You might want to make this script run on boot.
+I welcome a startup script
