@@ -26,7 +26,7 @@ add more networks as needed in the wpa_supplicant.conf file
 To connect to the internet, put this in your ~/.bashrc or .zshrc and   
 ```bash
 function internet(){
-  sudo service network-manger stop
+  sudo service network-manager stop
   sudo service wicd stop
   sudo killall wpa_supplicant
   sudo wpa_supplicant -i wlan0 -c /etc/wpa_supplicant.conf -B # -b for background you may need to change this to wlan1 based on what sudo iwconfig says
@@ -40,7 +40,7 @@ function refresh(){
   sudo dhclient wlan0
 }
 function internet1(){
-  sudo service network-manger stop
+  sudo service network-manager stop
   sudo service wicd stop
   sudo killall wpa_supplicant
   sudo wpa_supplicant -i wlan1 -c /etc/wpa_supplicant.conf -B # -b for background you may need to change this to wlan1 based on what sudo iwconfig says
